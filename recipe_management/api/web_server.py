@@ -25,7 +25,7 @@ class WebServer:
             uvicorn.Config(self.app,
                            host=self.commandline_arguments.http_address,
                            port=self.commandline_arguments.http_port,
-                           log_level="INFO"
+                           log_level="info"
                            )
         )
         logging.info(f"Web server started on {self.commandline_arguments.http_address}:{str(self.commandline_arguments.http_port)}")
