@@ -1,0 +1,24 @@
+### Get all recipes
+GET http://{{host}}/recipes
+Accept: application/json
+Authorization: Basic {{user}} {{password}}
+
+### Filter for number of servings
+GET http://{{host}}/recipes?numberOfServings=3
+Accept: application/json
+Authorization: Basic {{user}} {{password}}
+
+### Filter for vegetarian
+GET http://{{host}}/recipes?isVegetarian=True
+Accept: application/json
+Authorization: Basic {{user}} {{password}}
+
+### Filter for specific ingredients
+GET http://{{host}}/recipes?includeIngredients=Potatoes&includeIngredients=Cheese
+Accept: application/json
+Authorization: Basic {{user}} {{password}}
+
+### Filter for exluding specific ingredients
+GET http://{{host}}/recipes?excludeIngredients=Bacon&excludeIngredients=Potatoes
+Accept: application/json
+Authorization: Basic {{user}} {{password}}

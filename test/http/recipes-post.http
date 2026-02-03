@@ -1,0 +1,25 @@
+### Create a Potato Bake recipe
+POST http://{{host}}/recipes
+Accept: application/json
+Authorization: Basic {{user}} {{password}}
+Content-Type: application/json
+
+{
+   "recipeName": "Dummy Recipe 3",
+   "numberOfServings": 3,
+   "ingredients": ["Potatoes", "Milk", "Cheese", "Garlic", "Bacon"],
+   "instructions": "1) Preheat & Prep: Preheat oven to 180°C (350°F). Lightly grease a large baking dish. 2) Prepare Potatoes: Peel and slice potatoes. Tip: For a faster cook time, parboil slices for 5 minutes, then drain.<br/>3) Layer: Arrange half the potatoes in the dish. Top with half the onions, garlic, and bacon (if using). Season generously with salt and pepper. Repeat layers.<br/>4) Add Liquid: Whisk the cream and milk together, then pour over the potatoes.<br/>5) Bake: Cover the dish tightly with aluminum foil. Bake for 1 hour, or until the potatoes are tender.<br/>6) Cheese & Finish: Remove the foil, sprinkle with grated cheese, and bake uncovered for another 15-20 minutes until the top is golden and bubbling.<br/>7) Rest: Allow to sit for 5-10 minutes before serving to let the sauce thicken"
+}
+
+### Create a only rice recipe
+POST http://{{host}}/recipes
+Accept: application/json
+Authorization: Basic {{user}} {{password}}
+Content-Type: application/json
+
+{
+  "recipeName": "Cook rice",
+  "numberOfServings": 1,
+  "ingredients": ["Rice"],
+  "instructions": "To prepare rice, rinse it, combine with water (usually 2 parts water to 1 part rice) in a pot, bring to a boil, then cover and simmer on low heat for about 15-20 minutes until water is absorbed; let it rest covered for 5-10 minutes, then fluff with a fork before serving"
+}

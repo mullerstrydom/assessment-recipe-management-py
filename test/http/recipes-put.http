@@ -1,0 +1,13 @@
+### Update the rice recipe (if both POSTs have been run in order)
+PUT http://{{host}}/recipes
+Accept: application/json
+Authorization: Basic {{user}} {{password}}
+Content-Type: application/json
+
+{
+  "id": 2,
+  "recipeName": "Cook rice",
+  "numberOfServings": 1,
+  "ingredients": ["Rice"],
+  "instructions": "To prepare rice, do something..."
+}

@@ -1,0 +1,4 @@
+### Delete the rice recipe (if both POSTs have been run in order)
+DELETE http://{{host}}/recipes/2
+Accept: application/json
+Authorization: Basic {{user}} {{password}}
