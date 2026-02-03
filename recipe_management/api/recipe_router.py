@@ -1,13 +1,14 @@
 from fastapi import APIRouter, Query
 from fastapi.params import Depends
 
-from recipe_management.api.dependencies import get_recipe_service
+from recipe_management.api.dependencies import get_recipe_service, authorized_user
 from recipe_management.services.dto.recipe_dto import RecipeDto
 from recipe_management.services.recipe_service import RecipeService
 
 router = APIRouter(
     prefix="/recipes",
     tags=["Recipe"],
+    dependencies=[Depends(authorized_user)],
 )
 
 

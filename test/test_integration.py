@@ -25,7 +25,7 @@ class IntegrationTest(TestCase):
         self.database_connection = SqliteDatabase(commandline_arguments)
         main_phase = MainPhase(commandline_arguments, self.database_connection)
 
-        self.rest_client = TestClient(main_phase.rest_api.app)
+        self.rest_client = TestClient(main_phase.rest_api.app, headers={"Authorization": "Basic ZGVtbzpkZW1v"})  # demo:demo base64 encoded
 
     def tearDown(self):
         self.database_connection.close()

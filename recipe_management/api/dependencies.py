@@ -1,6 +1,7 @@
-from typing import Any, AsyncGenerator
+from typing import Any, AsyncGenerator, Annotated
 
-from fastapi import Depends
+from fastapi import Depends, HTTPException
+from fastapi.security import HTTPBasicCredentials, HTTPBasic
 from sqlmodel import Session
 
 from recipe_management.data.ingredient_repository import IngredientRepository
@@ -39,3 +40,10 @@ def get_ingredient_service(repository: IngredientRepository = Depends(get_ingred
 def get_recipe_service(repository: RecipeRepository = Depends(get_recipe_repository),
                        ingredient_service: IngredientService = Depends(get_ingredient_service)) -> RecipeService:
     return RecipeService(repository, ingredient_service)
+
+def authorized_user(credentials: Annotated[HTTPBasicCredentials, Depends(HTTPBasic())]):
+    # Placeholder for actual authentication logic
+    if credentials.username == "demo" and credentials.password == "demo":
+        return credentials.username
+    else:
+        raise HTTPException(status_code=401, detail="Unauthorized")
